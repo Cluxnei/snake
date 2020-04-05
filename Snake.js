@@ -1,4 +1,4 @@
-import {unity} from "./constants.js";
+import {unity} from "./Constants.js";
 
 export default class Snake {
     constructor() {
@@ -28,11 +28,14 @@ export default class Snake {
         });
     }
     update() {
-        const newHead = {
+        const newHead = this.computeNewHead();
+        this.snake.pop();
+        this.snake.unshift(newHead);
+    }
+    computeNewHead() {
+        return  {
             x: this.snake[0].x + unity,
             y: this.snake[0].y
         };
-        this.snake.pop();
-        this.snake.unshift(newHead);
     }
 }

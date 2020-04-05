@@ -1,5 +1,5 @@
-import {rand} from "./functions.js";
-import {unity} from "./constants.js";
+import {rand} from "./Functions.js";
+import {unity} from "./Constants.js";
 
 export default class Food {
     constructor(x, y) {
