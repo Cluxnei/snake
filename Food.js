@@ -1,13 +1,15 @@
 import {rand} from "./Functions.js";
 import {unity} from "./Constants.js";
+import {maxUnityX, maxUnityY} from "./Dimentions.js";
 
 export default class Food {
-    constructor(x, y) {
-        this.x = x * unity;
-        this.y = y * unity;
-        this.color = 'red';
-        this.rangeX = [0, 100];
-        this.rangeY = [0, 100];
+    constructor() {
+        this.x = unity;
+        this.y = unity;
+        this.rangeX = [0, maxUnityX];
+        this.rangeY = [0, maxUnityY];
+        this.generate();
+        this.color = '#f00';
     }
     generate() {
         this.x = rand(
@@ -19,7 +21,10 @@ export default class Food {
             this.rangeY[1]
         ) * unity;
     }
-    draw(ctx) {
+    draw(ctx, foodImage = undefined) {
+        if (foodImage) {
+            return ctx.drawImage(foodImage, this.x, this.y, unity, unity);
+        }
         ctx.fillStyle = this.color;
         ctx.fillRect(this.x, this.y, unity, unity);
     }
