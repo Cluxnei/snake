@@ -5,6 +5,9 @@ export default class Direction {
     constructor() {
         this.way = 'right';
     }
+    reset() {
+        this.way = 'right';
+    }
     collidingDirections(newDirection) {
         return {
             left: 'right',

@@ -24,6 +24,7 @@ export default class Game {
     start() {
         if (this.state === states.gameOver) {
             this.snake.reborn();
+            this.direction.reset();
             this.drawGameOver();
             return this.waitForEnterKey();
         } else if (this.state === states.play) {

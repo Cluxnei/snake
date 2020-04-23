@@ -12,14 +12,8 @@ export default class Food {
         this.color = '#f00';
     }
     generate() {
-        this.x = rand(
-            this.rangeX[0],
-            this.rangeX[1]
-        ) * unity;
-        this.y = rand(
-            this.rangeY[0],
-            this.rangeY[1]
-        ) * unity;
+        this.x = rand(this.rangeX[0], this.rangeX[1]) * unity;
+        this.y = rand(this.rangeY[0], this.rangeY[1]) * unity;
     }
     draw(ctx, foodImage = undefined) {
         if (foodImage) {
